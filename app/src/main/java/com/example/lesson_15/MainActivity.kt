@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
         if (!mapGroup.values.toList().filter { it.present }.isEmpty()) {
             val ran = mapGroup.values.toList().filter { it.present }.random()
             tvRandomStudent?.setText(ran.name)
-        } else Toast.makeText(this, "Студенты отсутствуют!", Toast.LENGTH_LONG).show()
+        } else {Toast.makeText(this, "Студенты отсутствуют!", Toast.LENGTH_LONG).show()}
     }
 
     fun onCheckBoxClick(view: View?) {
