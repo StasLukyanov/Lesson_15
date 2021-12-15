@@ -67,10 +67,6 @@ class MainActivity : AppCompatActivity() {
     fun onCheckBoxClick(view: View?) {
         val checkBox = view as CheckBox
         val check = checkBox.isChecked
-        if (check) {
-            mapGroup.get(view.id)?.present = false
-        } else {
-            mapGroup.get(view.id)?.present = true
-        }
+        mapGroup.get(view.id)?.present = !check
     }
 }
