@@ -24,18 +24,18 @@ class MainActivity : AppCompatActivity() {
     var checkBox9: CheckBox? = null
     var checkBox10: CheckBox? = null
 
-    val mapGroup = mutableMapOf(
-        R.id.checkBox0 to Group("Егор", true),
-        R.id.checkBox1 to Group("Стас", true),
-        R.id.checkBox2 to Group("Настя", true),
-        R.id.checkBox3 to Group("Антон", true),
-        R.id.checkBox4 to Group("Надя", true),
-        R.id.checkBox5 to Group("Саша", true),
-        R.id.checkBox6 to Group("Alex", true),
-        R.id.checkBox7 to Group("Наташа", true),
-        R.id.checkBox8 to Group("Марина", true),
-        R.id.checkBox9 to Group("Дима", true),
-        R.id.checkBox10 to Group("Дарья", true),
+    val mapStudent = mutableMapOf(
+        R.id.checkBox0 to Student("Егор", true),
+        R.id.checkBox1 to Student("Стас", true),
+        R.id.checkBox2 to Student("Настя", true),
+        R.id.checkBox3 to Student("Антон", true),
+        R.id.checkBox4 to Student("Надя", true),
+        R.id.checkBox5 to Student("Саша", true),
+        R.id.checkBox6 to Student("Alex", true),
+        R.id.checkBox7 to Student("Наташа", true),
+        R.id.checkBox8 to Student("Марина", true),
+        R.id.checkBox9 to Student("Дима", true),
+        R.id.checkBox10 to Student("Дарья", true),
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,8 +58,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onSelectStudentClick(view: View?) {
-        if (!mapGroup.values.toList().filter { it.present }.isEmpty()) {
-            val ran = mapGroup.values.toList().filter { it.present }.random()
+        if (!mapStudent.values.toList().filter { it.present }.isEmpty()) {
+            val ran = mapStudent.values.toList().filter { it.present }.random()
             tvRandomStudent?.setText(ran.name)
         } else {Toast.makeText(this, "Студенты отсутствуют!", Toast.LENGTH_LONG).show()}
     }
@@ -67,6 +67,6 @@ class MainActivity : AppCompatActivity() {
     fun onCheckBoxClick(view: View?) {
         val checkBox = view as CheckBox
         val check = checkBox.isChecked
-        mapGroup.get(view.id)?.present = !check
+        mapStudent.get(view.id)?.present = !check
     }
 }
